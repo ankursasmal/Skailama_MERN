@@ -11,8 +11,19 @@ const auth = require('./middleware/auth');
 
  app.use(cookie());
  app.use(express.json());
- app.use(cors({
-  origin: 'https://skailama-mern-fronte.onrender.com',  
+ const allowedOrigins = [
+  'http://localhost:5173',  // local dev
+  'https://skailama-mern-fronte.onrender.com'  // production
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PATCH', 'PUT'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
