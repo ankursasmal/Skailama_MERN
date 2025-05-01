@@ -12,7 +12,7 @@ const auth = require('./middleware/auth');
  app.use(cookie());
  app.use(express.json());
  app.use(cors({
-  origin: 'http://localhost:5173', // Allow Vite frontend
+  origin: 'https://skailama-mern-fronte.onrender.com',  
   methods: ['GET', 'POST', 'PATCH', 'PUT'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
