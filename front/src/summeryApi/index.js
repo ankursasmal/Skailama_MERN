@@ -1,5 +1,5 @@
  
-const BackendDomin='http://localhost:3000/api'
+const BackendDomin='https://skailama-mern-backend.onrender.com'
 
 const SummeryApi={
     signUp:{
