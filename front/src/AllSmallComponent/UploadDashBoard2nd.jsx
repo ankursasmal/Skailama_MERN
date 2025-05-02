@@ -8,6 +8,7 @@ import Table_file from './Table_file'
 function UploadDashBoard2nd({IDS}) {
   let [showTable,setShaowTable]=useState(true);
   let [ID,setIds]=useState(IDS);
+  
    return (
     <div className='flex flex-col items-start'>
         <DashNav/>

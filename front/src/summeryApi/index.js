@@ -1,6 +1,6 @@
  
-const BackendDomin='https://skailama-mern-backend.onrender.com'
-
+const BackendDomin='https://skailama-mern-backend.onrender.com/api'
+ 
 const SummeryApi={
     signUp:{
         url:`${BackendDomin}/signup`,
