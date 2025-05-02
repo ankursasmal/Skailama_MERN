@@ -1,12 +1,142 @@
-# React + Vite
+ 
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 Create & Project Info Store Website (MERN Stack)
 
-Currently, two official plugins are available:
+This project is a **full-stack web application** built with the **MERN stack (MongoDB, Express, React, Node.js)** that allows users to **create projects, upload files (like podcasts/audio), and store transcript information.** It features user authentication, project management, and a clean dashboard UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌐 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Frontend:** [https://skailama-mern-fronte.onrender.com](https://skailama-mern-fronte.onrender.com)
+* **Backend:** [https://skailama-mern-backend.onrender.com](https://skailama-mern-backend.onrender.com)
+
+---
+
+## 📂 Features
+
+* 🔐 **User Authentication** (Sign up, Login)
+* 📁 **Project Creation & Management**
+* ⬆️ **File Uploads** (with transcript data)
+* 📝 **Edit & Save Transcripts**
+* 🗑️ **Delete Files**
+* 📊 **Dashboard/Table View of Files**
+* ✅ **Responsive Design**
+* ⚙️ **CORS-enabled API**
+
+---
+
+## 🛠️ Tech Stack
+
+| Frontend         | Backend           | Database |
+| ---------------- | ----------------- | -------- |
+| React + Vite     | Node.js + Express | MongoDB  |
+| Tailwind CSS     | REST API          | Mongoose |
+| React Router DOM | CORS Middleware   |          |
+
+---
+
+## 🚀 How to Run Locally
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone  https://github.com/ankursasmal/Skailama_MERN.git
+cd  Skailama_MERN
+```
+
+---
+
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+* Create a `.env` file in `/backend`:
+
+```
+PORT=3000
+MONGO_USER=your_username_string
+MONGO_Pass=your_password_string
+SECRET_key=your_secret
+```
+
+* Start the backend:
+
+```bash
+nodemon index.js
+```
+
+---
+
+### 3️⃣ Frontend Setup
+
+```bash
+cd front
+npm install
+```
+
+* In `/frontend`, create a `.env` file (if needed) to set the backend base URL:
+
+```
+VITE_BACKEND_URL=http://localhost:3000
+```
+
+* Start the frontend:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🗂️ Folder Structure
+
+```
+root
+├── backend
+│   ├── DB
+│   ├── models
+│   ├── routes
+│   ├── utils
+│   └── index.js
+├── frontend
+│   ├── src
+│   │   ├── Smallcomponents
+│   │   ├── Redux
+│   │   ├── SummaryApi
+│   │   ├── components
+│   │   ├── router
+│   │   └── App.jsx
+|   |   |--main.jsx
+└── README.md
+```
+
+---
+
+## 🌟 Main Files to Explore
+
+* **Frontend:**
+
+  * `Save_Edited.jsx` → Edit & Save transcripts
+  * `Table_file.jsx` → File table with View & Delete actions
+* **Backend:**
+
+  * `ProjectModel.js` → Mongoose Schema for project & files
+  * `projectRoutes.js` → All API routes (GET, PATCH, DELETE)
+
+---
+
+## 🐛 Common Issues
+
+* **CORS Errors:**
+  Ensure your backend CORS setup allows your deployed frontend origin.
+
+* **404 Errors:**
+  Check that your frontend is calling the correct API routes (e.g., `/api/project/:id`).
+
+---
+ 
