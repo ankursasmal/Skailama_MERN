@@ -12,8 +12,8 @@ const auth = require('./middleware/auth');
  app.use(cookie());
  app.use(express.json());
  const allowedOrigins = [
+   'https://skailama-mern-fronte.onrender.com' , // production
   'http://localhost:5173',  // local dev
-  'https://skailama-mern-fronte.onrender.com'  // production
 ];
 
 app.use(cors({
