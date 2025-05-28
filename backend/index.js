@@ -12,7 +12,9 @@ const auth = require('./middleware/auth');
  app.use(cookie());
  app.use(express.json());
  const allowedOrigins = [
-   'http://localhost:5173',   
+  'https://project-dashboard-front.onrender.com',
+   'http://localhost:5173',
+
 ];
 
 app.use(cors({
