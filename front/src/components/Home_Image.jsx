@@ -19,8 +19,7 @@ const {AuthUserDetail}=useContext(Context);
   };
 
   const handelSignup = async (e) => {
-    e.preventDefault();
-    try {
+     try {
  
       const res = await fetch(SummeryApi.signUp.url, {
         method: SummeryApi.signUp.method,
@@ -46,8 +45,7 @@ const {AuthUserDetail}=useContext(Context);
   };
 
   const handelLogin = async (e) => {
-    e.preventDefault();
-    try {
+     try {
        const res = await fetch(SummeryApi.Login.url, {
         method: SummeryApi.Login.method,
         credentials:'include',
