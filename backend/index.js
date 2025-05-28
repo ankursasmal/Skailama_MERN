@@ -1,20 +1,18 @@
-require('dotenv').config();
-const express=require('express');
-const  rout  = require('./route/router');
-const cors=require('cors')
-let app=express();
-let cookie=require('cookie-parser');
-let connections=require('./db/contection');
-const auth = require('./middleware/auth');
+const express = require('express');
+const cors = require('cors');
+const cookie = require('cookie-parser');
+const dotenv = require('dotenv');
+const rout = require('./route/router');
+const connections = require('./db/contection');
 
- const PORT=process.env.PORT || 3000;
+dotenv.config();
 
- app.use(cookie());
- app.use(express.json());
- const allowedOrigins = [
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+const allowedOrigins = [
   'https://project-dashboard-front.onrender.com',
-   'http://localhost:5173',
-
+  'http://localhost:5173',
 ];
 
 app.use(cors({
@@ -25,18 +23,21 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: ['GET', 'POST', 'PATCH', 'PUT'],
+  methods: ['GET', 'POST', 'PATCH', 'PUT', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
- 
-app.use("/",rout);
 
-connections.then(()=>{
-  app.listen(PORT,()=>{
-    console.log(`server running ${PORT} ,Db connect`);
-})
-}).catch(()=>{
-     console.log(`server running ${PORT}`,`Db Not connect`);
+app.options('*', cors()); // <- important
 
-})
+app.use(cookie());
+app.use(express.json());
+app.use("/", rout);
+
+connections.then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server running on ${PORT}, DB connected`);
+  });
+}).catch(() => {
+  console.log(`Server running on ${PORT}, DB not connected`);
+});
