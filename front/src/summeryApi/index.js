@@ -1,6 +1,6 @@
  
 // const BackendDomin='https://skailama-mern-backend.onrender.com/api'
- const BackendDomin='http://localhost:3000'
+ const BackendDomin='https://project-dash-board-qto5.onrender.com'
 
 const SummeryApi={
     signUp:{
