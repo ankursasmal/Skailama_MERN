@@ -29,7 +29,7 @@ app.use(cors({
   credentials: true
 }));
  
-app.use("/api",rout);
+app.use("/",rout);
 
 connections.then(()=>{
   app.listen(PORT,()=>{
